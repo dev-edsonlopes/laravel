@@ -42,11 +42,11 @@ Route::view('/empresa', 'empresa');
 
 Exemplo:
 
-![create-view](img\createview.png)
+![create-view](/img/createview.png)
 
 saida:
 
-![view](img\resultView.png)
+![view](/img/resultView.png)
 
 ## Tipos de rotas(any e match)
 
