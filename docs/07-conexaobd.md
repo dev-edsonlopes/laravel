@@ -12,7 +12,7 @@ Esse arquivo fica as conexões de varios bancos, "preset-ado" dentro de um array
 
 ## Criando um banco de dados
 
-````sql
+```sql
 CREATE DATABASE `cursolaravel`;
 ```
 
