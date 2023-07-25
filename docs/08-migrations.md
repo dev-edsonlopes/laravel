@@ -18,7 +18,7 @@ Comando para executar as migrations.
 php artisan migrate
 ```
 
-Resultado: 
+Resultado:
 
 ![exec-migrate](/img/execMigrate.png)
 
@@ -170,26 +170,31 @@ php artisan migrate:fresh
 
 agora vamos renomear as colunas:
 
-1.  criar uma migrations  update_produtos
+1. criar uma migrations  update_produtos
 
-```csharp
-php artisan make:migration update_produtos
-```
+    ```csharp
+    php artisan make:migration update_produtos
+    ```
 
 2. agora criamos o método up().
 
-```php
-    public function up(): void
-    {
-        Schema::table('produtos', function(Blueprint $table) {
-            $table->renameColumn('nomee', 'nome');
-            $table->dropColumn('nomecompleto');
-        });
-    }
-```
+    ```php
+        public function up(): void
+        {
+            Schema::table('produtos', function(Blueprint $table) {
+                $table->renameColumn('nomee', 'nome');
+                $table->dropColumn('nomecompleto');
+            });
+        }
+    ```
 
 3. Execute o comando migrate
 
-```csharp
-php artisan migrate
-```
+    ```csharp
+    php artisan migrate
+    ```
+
+### Notação
+
+- As migrations são executados de forma sequencial.
+- O Laravel criar datas e numeração, para que a migrate seja executados em sequência.
