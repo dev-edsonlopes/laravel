@@ -245,3 +245,45 @@ Goiba
 Banana
 Maçã
 ```
+
+## Include
+
+```php
+@extends('layout.layout')
+@section('title', 'HOME')
+@section('conteudo')
+
+@include('includes.mensagem', [
+    'titulo' => 'Home Page', 
+    'paragrafo' => 'Hello! Welcome to my page'
+    ])
+
+@endsection
+```
+
+`\views\includes\mensagem.blade.php`
+
+```html
+<h1> {{ $titulo }} </h1>
+<p> {{ $paragrafo }} </p>
+
+```
+
+## Component
+
+`\views\components\sidebar.blade.php`
+
+```php
+<div style="background-color: black; color: white;">
+    <h1>Side Bar</h1>
+    <p>{{ $paragrafo }}</p>
+</div>
+```
+
+```php
+@component('components.sidebar')
+    @slot('paragrafo')
+        Texto qualquer vindo do slot
+    @endslot
+@endcomponent
+```

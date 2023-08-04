@@ -1,14 +1,15 @@
 @extends('layout.layout')
 @section('title', 'HOME')
 @section('conteudo')
-<h1>Home Page</h1>
-{{-- ESTRUTURA DE REPETIÇÃO --}}
 
-@php
-    $frutas = array('Goiba', 'Banana', 'Maçã');
-@endphp
+@include('includes.mensagem', [
+    'titulo' => 'Home Page', 
+    'paragrafo' => 'Hello! Welcome to my page'
+    ])
 
-@foreach ($frutas as $fruta)
-    {{ $fruta }} <br />
-@endforeach
+@component('components.sidebar')
+    @slot('paragrafo')
+        Texto qualquer vindo do slot
+    @endslot
+@endcomponent
 @endsection
