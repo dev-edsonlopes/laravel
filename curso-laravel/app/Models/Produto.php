@@ -10,4 +10,13 @@ class Produto extends Model
     use HasFactory;
 
     protected $table = 'produtos';
+
+    // Método para criar o relacionamento.
+    public function user() {
+        return $this->belongsTo(User::class, 'id_user');
+    }
+
+    public function categoria() {
+        return $this->belongsTo(Categoria::class, 'id_categoria');
+    }    
 }
