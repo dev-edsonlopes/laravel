@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProdutoController;
+use App\Models\Produto;
+use App\Http\Controllers\SiteController;
 
-Route::view('/', 'welcome');
-Route::resource('produtos', ProdutoController::class);
+Route::resource('produtos', Produto::class);
+Route::get('/', [SiteController::class, 'index'])->name('layout.site');
+
+Route::get('/produto/{slug}', [SiteController::class, 'details'])->name('layout.details');
