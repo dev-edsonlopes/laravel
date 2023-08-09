@@ -6,5 +6,5 @@ use App\Http\Controllers\SiteController;
 
 Route::resource('produtos', Produto::class);
 Route::get('/', [SiteController::class, 'index'])->name('layout.site');
-
 Route::get('/produto/{slug}', [SiteController::class, 'details'])->name('layout.details');
+Route::get('/categoria/{id}', [SiteController::class, 'categoria'])->name('layout.categoria');
