@@ -25,7 +25,7 @@
                 <li><a href="{{ route('layout.site')}}">Home</a></li>
                 <li><a class='dropdown-trigger' href='#' data-target='dropdown1'>Categorias<i
                             class="material-icons right">expand_more</i></a></li>
-                <li><a href="">Carrinhos</a></li>
+                <li><a href="{{ route('layout.carrinho')}}">Carrinhos</a></li>
         </div>
     </nav>
 
