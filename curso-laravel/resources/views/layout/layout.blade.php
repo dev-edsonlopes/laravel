@@ -15,17 +15,20 @@
 <body>
     <ul id='dropdown1' class='dropdown-content'>
         @foreach ($categoriasMenu as $categoriaM)
-            <li><a href="{{route('layout.categoria', $categoriaM->id)}}">{{ $categoriaM->nome }}</a></li>
+            <li><a href="{{ route('layout.categoria', $categoriaM->id) }}">{{ $categoriaM->nome }}</a></li>
         @endforeach
     </ul>
     <nav class="red">
         <div class="nav-wrapper container">
             <a href="" class="brand-logo center">Curso Laravel</a>
             <ul id="nav-mobile" class="left">
-                <li><a href="{{ route('layout.site')}}">Home</a></li>
+                <li><a href="{{ route('layout.site') }}">Home</a></li>
                 <li><a class='dropdown-trigger' href='#' data-target='dropdown1'>Categorias<i
                             class="material-icons right">expand_more</i></a></li>
-                <li><a href="{{ route('layout.carrinho')}}">Carrinhos</a></li>
+                <li><a href="{{ route('layout.carrinho') }}">
+                        Carrinho <span class="new badge blue" data-badge-caption="">{{ \Cart::getcontent()->count() }}</span>
+                    </a>
+                </li>
         </div>
     </nav>
 

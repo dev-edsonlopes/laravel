@@ -15,7 +15,7 @@
         <p> Postador por: {{ $produto->user->firstName }}</p>
         <p> Categoria: {{ $produto->nome }}</p>
 
-        <form action="{{ route('layout.addCarrinho') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('addCarrinho') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="id" value="{{ $produto->id }}">
             <input type="hidden" name="name" value="{{ $produto->nome }}">

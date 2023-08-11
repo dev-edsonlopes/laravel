@@ -24,5 +24,27 @@ class CarrinhoController extends Controller
                 'image' => $request->img
             )
         ]);
+
+        return redirect()->route('layout.carrinho')->with('add', 'Produto adicionado com sucesso!');
+    }
+
+    public function removerCarrinho(Request $request)
+    {   
+        // dd($request);
+        \Cart::remove($request->id);
+
+        return redirect()->route('layout.carrinho')->with('delete', 'Produto removido com sucesso!');
+    }
+
+    public function atualizarCarrinho(Request $request)
+    {
+        \Cart::update($request->id, [
+            'quantity' => [
+                'relative' => false,
+                'value' => $request->quantity
+            ]
+            ]);
+
+            return redirect()->route('layout.carrinho')->with('update', 'Produto atualizado com sucesso!');
     }
 }
